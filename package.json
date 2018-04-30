@@ -1,5 +1,5 @@
 {
-  "name": "streamtool",
+  "name": "vixxen",
   "version": "0.0.0",
   "author": "Fortyseven <fortyseven@gmail.com>",
   "description": "An electron-vue project",
@@ -22,7 +22,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "streamtool",
+    "productName": "Vixxen",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
