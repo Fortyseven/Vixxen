@@ -1,0 +1,9 @@
+*.md diff
+*.json diff
+*.js diff
+*.vue diff
+*.html diff
+*.css diff
+*.scss diff
+*.txt diff
+*.ejs diff
