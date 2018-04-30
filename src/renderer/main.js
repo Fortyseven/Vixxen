@@ -5,9 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import fontawesome from '@fortawesome/fontawesome';
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+import fasolid from '@fortawesome/fontawesome-free-solid';
+
+fontawesome.library.add(fasolid);
+
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,3 +23,5 @@ new Vue({
   store,
   template: '<App/>'
 }).$mount('#app')
+
+
