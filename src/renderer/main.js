@@ -9,6 +9,9 @@ import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import fasolid from '@fortawesome/fontawesome-free-solid';
 
+import Store from 'electron-store';
+
+
 fontawesome.library.add(fasolid);
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
