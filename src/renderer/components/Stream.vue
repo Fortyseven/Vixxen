@@ -1,14 +1,10 @@
 <template>
-    <div class="home">
-        <h1><font-awesome-icon icon="home"/> Home</h1>
-        <div class="container">
-            <div class="row">
-                <h4>Restream.io</h4>
+    <div id="ComponentContainer">
+        <h1><font-awesome-icon icon="podcast"/> Stream</h1>
+        <main>
+            <div class="left-side">
             </div>
-            <div class="row">
-                <div class="col-auto"><button class="btn" @click="openExternal('https://restream.io/titles')">Restream Titles</button></div>
-            </div>
-        </div>
+        </main>
     </div>
 </template>
 
@@ -19,9 +15,9 @@ var shell = require("electron").shell;
 
 export default {
     name: "home",
-    //   components: {
-    //     SystemInformation
-    //   },
+//   components: {
+//     SystemInformation
+//   },
     data: () => {
         return {
             isOpen: false,

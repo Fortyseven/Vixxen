@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import App from './App'
 import router from './router'
-import store from './store'
+// import store from './store'
 
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
@@ -21,12 +21,23 @@ Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+Vue.mixin({
+    methods: {
+        openExternal( href, user_browser = false ) {
+            if ( user_browser ) {
+                window.open( href );
+            } else {
+                this.$electron.shell.openExternal( href );
+            }
+        }
+    }
+});
+
 /* eslint-disable no-new */
 new Vue({
-  components: { App },
-  router,
-  store,
-  template: '<App/>'
-}).$mount('#app')
-
-
+    components: { App },
+    router,
+    //   store,
+    template: '<App/>',
+})
+.$mount('#app')

@@ -1,35 +1,38 @@
 <template>
-  <div id="wrapper">
-        <div class="menu-wrapper">
-            <router-link to="/"><font-awesome-icon icon="home"/> Home</router-link>
-            <router-link to="social-test"><font-awesome-icon icon="podcast"/> Stream</router-link>
-            <router-link to="social-test"><font-awesome-icon icon="bullhorn"/> Social</router-link>
-            <router-link to="social-test"><font-awesome-icon icon="file"/> Labels</router-link>
-            <router-link to="social-test"><font-awesome-icon icon="puzzle-piece"/> Extensions</router-link>
-            <router-link to="social-test"><font-awesome-icon icon="cog"/> Config</router-link>
+    <div class="container-fluid h-100">
+        <div class="row no-gutters h-100">
+            <div class="menu-wrapper col-12 h-100">
+                <div class="row"><router-link class="col-12" to="/"><font-awesome-icon icon="home"/> Home</router-link></div>
+                <div class="row"><router-link class="col-12" to="stream"><font-awesome-icon icon="podcast"/> Stream</router-link></div>
+                <div class="row"><router-link class="col-12" to="chat"><font-awesome-icon icon="comments"/> Chat</router-link></div>
+                <div class="row"><router-link class="col-12" to="social-test"><font-awesome-icon icon="bullhorn"/> Social</router-link></div>
+                <div class="row"><router-link class="col-12" to="labels"><font-awesome-icon icon="file"/> Labels</router-link></div>
+                <!-- <div class="row"><router-link class="col-12" to="extensions"><font-awesome-icon icon="puzzle-piece"/> Extensions</router-link></div> -->
+                <div class="row"><router-link class="col-12" to="config"><font-awesome-icon icon="cog"/> Config</router-link></div>
+            </div>
         </div>
-  </div>
+    </div>
 </template>
 
 
 <script>
-  export default {
+export default {
     name: 'vixxen-menu',
     methods: {
-      open (link) {
+        open (link) {
         this.$electron.shell.openExternal(link)
-      }
+        }
     }
-  };
+};
 </script>
 
 
 <style>
     .menu-wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-   }
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* width: 100%; */
+    }
     a {
         color: white;
         text-decoration: none;
@@ -44,10 +47,13 @@
         margin-right: 0.5em;
     }
 
-
+    a:hover {
+        color:white;
+        background: rgba(255,0,255,0.2);
+        text-decoration: none;
+    }
     a.router-link-exact-active {
         color: violet;
         background: rgba(255,0,255,0.2);
     }
-
 </style>
