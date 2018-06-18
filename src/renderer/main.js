@@ -14,6 +14,10 @@ import fasolid from '@fortawesome/fontawesome-free-solid';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+import jQuery from 'jquery';
+
+window.jQuery = jQuery;
+window.$ = jQuery;
 
 import interpolateString from './utils/interpolateString';
 
