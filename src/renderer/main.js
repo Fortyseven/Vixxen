@@ -14,6 +14,9 @@ import fasolid from '@fortawesome/fontawesome-free-solid';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+
+import interpolateString from './utils/interpolateString';
+
 fontawesome.library.add(fasolid);
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
@@ -33,6 +36,8 @@ Vue.mixin({
         getStoreGetter( key ) {
             return this.$store.getters[key];
         },
+        interpolateString( instring ) {
+            return interpolateString( this.$store, instring );
         }
     }
 });
