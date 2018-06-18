@@ -3,13 +3,13 @@ import axios from 'axios'
 
 import App from './App'
 import router from './router'
-// import store from './store'
+import store from './store/store'
 
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import fasolid from '@fortawesome/fontawesome-free-solid';
 
-import Store from 'electron-store';
+// import Store from 'electron-store';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -29,6 +29,10 @@ Vue.mixin({
             } else {
                 this.$electron.shell.openExternal( href );
             }
+        },
+        getStoreGetter( key ) {
+            return this.$store.getters[key];
+        },
         }
     }
 });
@@ -37,7 +41,7 @@ Vue.mixin({
 new Vue({
     components: { App },
     router,
-    //   store,
+    store,
     template: '<App/>',
 })
 .$mount('#app')
