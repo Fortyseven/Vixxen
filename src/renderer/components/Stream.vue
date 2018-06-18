@@ -3,6 +3,7 @@
         <h1><font-awesome-icon icon="podcast"/> Stream</h1>
         <main>
             <div class="left-side">
+                <input type="">
             </div>
         </main>
     </div>

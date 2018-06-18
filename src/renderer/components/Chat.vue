@@ -8,12 +8,12 @@
                     id="twitch_chat"
                     height="100%"
                     width="100%"
-                    src="http://www.twitch.tv/embed/drfortyseven/chat">
+                    v-bind:src= "'http://www.twitch.tv/embed/' + getTwitchUser + '/chat'">
             </iframe>
         </div>
         <div class="external-links">
             <div class="col-6">
-                <button class="btn w-100" @click="openExternal('http://www.twitch.tv/embed/drfortyseven/chat')">
+                <button class="btn w-100" @click="openExternal('http://www.twitch.tv/embed/'+getTwitchUser+'/chat')">
                     <font-awesome-icon icon="share"></font-awesome-icon> Open Twitch chat in new window
                 </button>
             </div>
@@ -30,7 +30,7 @@
 <script>
 /************************************************************************/
 var shell = require("electron").shell;
-
+import { mapGetters } from 'vuex';
 export default {
     name: "chat",
 
@@ -40,6 +40,9 @@ export default {
         }
     },
     computed: {
+        ...mapGetters([
+            'getTwitchUser'
+        ]),
         favorites() {
             return this.$store.getters.getFavorites;
         }

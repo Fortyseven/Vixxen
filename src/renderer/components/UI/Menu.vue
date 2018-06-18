@@ -5,7 +5,7 @@
                 <div class="row"><router-link class="col-12" to="/"><font-awesome-icon icon="home"/> Home</router-link></div>
                 <div class="row"><router-link class="col-12" to="stream"><font-awesome-icon icon="podcast"/> Stream</router-link></div>
                 <div class="row"><router-link class="col-12" to="chat"><font-awesome-icon icon="comments"/> Chat</router-link></div>
-                <div class="row"><router-link class="col-12" to="social-test"><font-awesome-icon icon="bullhorn"/> Social</router-link></div>
+                <div class="row"><router-link class="col-12" to="social"><font-awesome-icon icon="bullhorn"/> Social</router-link></div>
                 <div class="row"><router-link class="col-12" to="labels"><font-awesome-icon icon="file"/> Labels</router-link></div>
                 <!-- <div class="row"><router-link class="col-12" to="extensions"><font-awesome-icon icon="puzzle-piece"/> Extensions</router-link></div> -->
                 <div class="row"><router-link class="col-12" to="config"><font-awesome-icon icon="cog"/> Config</router-link></div>

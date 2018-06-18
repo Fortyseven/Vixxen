@@ -1,17 +1,20 @@
 <template>
     <div class="status-bar">
-        <label class="twitch-purple">Twitch:</label> <span @click="openExternal('https://twitch.tv/' + twitch_user)">{{ twitch_user }}</span>
+        <label class="twitch-purple">Twitch:</label> <span @click="openExternal( 'https://twitch.tv/' + getTwitchUser )">{{ getTwitchUser }}</span>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     name: 'StatusBar',
-    data: () => {
-        return {
-            twitch_user: "drfortyseven"
-        }
-    }
+    computed: mapGetters([
+        'getTwitchUser'
+    ])
+    // computed: {
+    //      twitch_user() { return this.$store.state.twitch_user; }
+    // }
 };
 </script>
 

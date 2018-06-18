@@ -20,8 +20,8 @@ export default new Router({
             component: require('@/components/Stream').default
         },
         {
-            path: '/social-test',
-            name: 'social-test',
+            path: '/social',
+            name: 'social',
             component: require('@/components/Social').default
         },
         {
