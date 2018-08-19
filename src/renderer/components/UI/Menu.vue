@@ -1,14 +1,14 @@
 <template>
-    <div class="container-fluid h-100">
-        <div class="row no-gutters h-100">
-            <div class="menu-wrapper col-12 h-100">
-                <div class="row"><router-link class="col-12" to="/"><font-awesome-icon icon="home"/> Home</router-link></div>
-                <div class="row"><router-link class="col-12" to="stream"><font-awesome-icon icon="podcast"/> Stream</router-link></div>
-                <div class="row"><router-link class="col-12" to="chat"><font-awesome-icon icon="comments"/> Chat</router-link></div>
-                <div class="row"><router-link class="col-12" to="social"><font-awesome-icon icon="bullhorn"/> Social</router-link></div>
-                <div class="row"><router-link class="col-12" to="labels"><font-awesome-icon icon="file"/> Labels</router-link></div>
+    <div class="col">
+        <div class="row no-gutters">
+            <div class="menu-wrapper col">
+                <div class="row"><router-link class="col" to="/"><font-awesome-icon icon="home"/> Home</router-link></div>
+                <div class="row"><router-link class="col" to="stream"><font-awesome-icon icon="podcast"/> Stream</router-link></div>
+                <div class="row"><router-link class="col" to="chat"><font-awesome-icon icon="comments"/> Chat</router-link></div>
+                <div class="row"><router-link class="col" to="social"><font-awesome-icon icon="bullhorn"/> Social</router-link></div>
+                <div class="row"><router-link class="col" to="labels"><font-awesome-icon icon="file"/> Labels</router-link></div>
                 <!-- <div class="row"><router-link class="col-12" to="extensions"><font-awesome-icon icon="puzzle-piece"/> Extensions</router-link></div> -->
-                <div class="row"><router-link class="col-12" to="config"><font-awesome-icon icon="cog"/> Config</router-link></div>
+                <div class="row"><router-link class="col" to="config"><font-awesome-icon icon="cog"/> Config</router-link></div>
             </div>
         </div>
     </div>
@@ -55,5 +55,10 @@ export default {
     a.router-link-exact-active {
         color: violet;
         background: rgba(255,0,255,0.2);
+    }
+
+    .menu-wrapper div {
+         white-space: nowrap;
+         overflow:hidden;
     }
 </style>

@@ -1,14 +1,14 @@
 <template>
-    <div id="app" class="container-fluid h-100 d-flex flex-column">
-        <div class="row no-gutters">
+    <div id="app" class="container-fluid h-100">
+        <div class="row col-12 p-0 no-gutters">
             <StatusBar></StatusBar>
         </div>
-        <div class="row no-gutters h-100">
-            <div id="app-menu" class="w-20 h-100">
+        <div class="row col-12 p-0 no-gutters h-100">
+            <div id="app-menu" class="col-12 col-md-2 col-lg-1">
                 <VixxenMenu/>
             </div>
-            <div id="app-content" class="col h-100">
-                <div class="content-area row no-gutters h-100">
+            <div id="app-content" class="col">
+                <div class="content-area container row no-gutters">
                     <router-view class="col-12 h-100"></router-view>
                 </div>
             </div>
@@ -44,7 +44,7 @@ export default {
 
     body {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         font-family: 'Source Sans Pro', sans-serif;
         box-sizing: border-box;
         padding: 0;
