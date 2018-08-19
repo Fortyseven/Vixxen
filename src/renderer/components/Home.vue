@@ -3,6 +3,12 @@
         <h1><font-awesome-icon icon="home"/> Home</h1>
         <div class="container">
             <div class="row">
+                <h4>Twitch</h4>
+            </div>
+            <div class="row">
+                <div class="col-auto"><button class="btn" @click="openExternal('https://inspector.twitch.tv')">Inspector</button></div>
+            </div>
+            <div class="row">
                 <h4>Restream.io</h4>
             </div>
             <div class="row">

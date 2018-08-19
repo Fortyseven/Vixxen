@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 import twitch from './twitch';
 import stream from './stream';
+import labels from './labels';
 
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage
@@ -14,7 +15,8 @@ const vuexLocal = new VuexPersistence({
 export default new Vuex.Store({
     modules: {
         twitch,
-        stream
+        stream,
+        labels
     },
     plugins: [
         vuexLocal.plugin

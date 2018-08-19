@@ -2,19 +2,27 @@
     <div class="labels container-fluid d-flex flex-column">
         <h1><font-awesome-icon icon="file"/> Labels</h1>
         <div class="content">
-            xxx
+            <ul>
+                <li v-for="(value,id) in getLabels">
+                    {{ value }} ## {{id}}
+                </li>
+            </ul>
         </div>
     </div>
 </template>
 
 <script>
+import {mapGetters, mapMutations} from 'vuex';
 export default {
     name: 'labels',
-    data() { return {
-        // description: "This is a thing that's happening.",
-        // game: "Far Cry 5"
-    }},
     computed: {
+        ...mapGetters([
+            'getLabels'
+        ]),
+        ...mapMutations([
+            'addLabel',
+            'removeLabel'
+        ])
     },
     methods: {
     }
