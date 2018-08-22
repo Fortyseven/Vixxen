@@ -4,7 +4,7 @@ export default {
         labels: {
             'date': {
                 value: "$TIME",
-                output_file: "D:\Home\Stream\_Apps\Snaz\TextFiles\Time.txt",
+                output_file: `D:\\Home\\Stream\\_Apps\\Snaz\\TextFiles\\Time.txt`,
                 interval: 1000
             }
         }

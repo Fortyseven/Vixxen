@@ -1,20 +1,32 @@
 <template>
     <div class="status-bar">
         <label class="twitch-purple">Twitch:</label> <span @click="openExternal( 'https://twitch.tv/' + getTwitchUser )">{{ getTwitchUser }}</span>
+        <label @click="toggleLabels" class="twitch-purple">Labels:</label> <span v-if="getLabelState">On</span><span v-else>Off</span></label>
     </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import EventBus from '../../EventBus';
 
 export default {
     name: 'StatusBar',
-    computed: mapGetters([
-        'getTwitchUser'
-    ])
-    // computed: {
-    //      twitch_user() { return this.$store.state.twitch_user; }
-    // }
+    computed: {
+        ...mapGetters([
+            'getTwitchUser',
+            'getLabelState'
+        ]),
+    },
+    methods: {
+        toggleLabels() {
+            if (this.getLabelState === true) {
+                this.$labelManager.disable();
+            } else {
+                this.$labelManager.enable();
+            }
+            this.$forceUpdate();
+        }
+    }
 };
 </script>
 
