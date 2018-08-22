@@ -1,5 +1,6 @@
 export default {
     state: {
+        labels_enabled: false,
         labels: {
             'date': {
                 value: "$TIME",
@@ -11,6 +12,9 @@ export default {
     getters: {
         getLabels: state => {
             return state.labels;
+        },
+        getLabelState: state => {
+            return state.labels_enabled;
         }
     },
     mutations: {
@@ -24,6 +28,9 @@ export default {
         },
         removeLabel(state, id) {
             delete state.labels[id];
+        },
+        setLabelState(state, bool)  {
+            state.labels_enabled = bool;
         }
     }
 };
