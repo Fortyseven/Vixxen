@@ -3,12 +3,12 @@
         <div class="row col-12 p-0 no-gutters">
             <StatusBar></StatusBar>
         </div>
-        <div class="row col-12 p-0 no-gutters h-100">
+        <div class="primary-container row col-12 p-0 no-gutters">
             <div id="app-menu" class="col-12 col-md-2 col-lg-1">
                 <VixxenMenu/>
             </div>
             <div id="app-content" class="col">
-                <div class="content-area container row no-gutters">
+                <div class="content-area row no-gutters">
                     <router-view class="col-12 h-100"></router-view>
                 </div>
             </div>
@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
     :root {
         --primary_color: #3300FF;
@@ -86,6 +86,12 @@ export default {
 
     .content-area {
         flex: 1 1 auto;
+    }
+
+    .primary-container {
+        @media (min-width:767px) {
+            height: 100%;
+        }
     }
 
 </style>
