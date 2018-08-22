@@ -3,23 +3,30 @@
         <h1><font-awesome-icon icon="bullhorn"/> Social</h1>
         <div class="content">
             <h4>Description</h4>
-            <textarea placeholder="Describe the stream..." v-model="description" cols="80" rows="4"></textarea>
+            <textarea placeholder="Describe the stream..." v-model="description" rows="4" class="description"></textarea>
             <h4>Game</h4>
             <input v-model="game" type="text">
-            <div class="row no-gutters">
-                <div class="w-100"><hr/></div>
-            </div>
-            <h4>Stream Name</h4>
-            <textarea id="StreamName" rows="1" readonly class="output" v-html="updateTwitchTitle"></textarea>
-            <div class="row no-gutters">
-                <button class="btn col-2" @click="copyToClipboard('#StreamName')">👆 Copy</button>
-            </div>
-            <br/>
-            <h4>Twitter</h4>
-            <textarea id="SocialText" rows="6" readonly class="output" v-html="updateOutput"></textarea>
-            <div class="row no-gutters">
-                <button class="btn col-2 m-1" @click="copyToClipboard('#SocialText')">👆 Copy</button>
-                <button class="btn col-2 m-1" @click="tweet">🐦 Tweet</button>
+
+            <div class="row no-gutters"><div class="w-100"><hr/></div></div>
+            <div class="container-fluid p-0 row">
+                <div class="col-12 col-lg-6">
+                    <h4>Stream Title</h4>
+                    <textarea id="StreamName" rows="2" readonly class="output" v-html="updateTwitchTitle"></textarea>
+                    <div class="row no-gutters">
+                        <button class="btn col-2" @click="copyToClipboard('#StreamName')">👆 Copy</button>
+                    </div>
+                </div>
+
+                <div class="d-block d-lg-none col-12 no-gutters"><div class="w-100"><hr/></div></div>
+
+                <div class="col-12 col-lg-6">
+                    <h4>Twitter</h4>
+                    <textarea id="SocialText" rows="6" readonly class="output" v-html="updateOutput"></textarea>
+                    <div class="row no-gutters">
+                        <button class="btn col-2 m-1" @click="copyToClipboard('#SocialText')">👆 Copy</button>
+                        <button class="btn col-2 m-1" @click="tweet">🐦 Tweet</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -74,6 +81,9 @@ export default {
 
 <style lang="scss" scoped>
 .social {
+    hr {
+        border: 1px dashed white;
+    }
     label {
         display: block;
         font-weight: bold;
@@ -81,7 +91,8 @@ export default {
     button {
         display: block;
     }
-    textarea {
+    textarea.description {
+        width: 100%;
     }
     textarea.output {
         font-family: "Ubuntu Mono";
