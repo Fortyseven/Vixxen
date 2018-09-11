@@ -39,8 +39,8 @@ export default {
     width: 100%;
     background: lightgray;
     color: black;
-    font-family: "VT323", monospace;
-    font-size: 1.2rem;
+    font-family: var(--mono-font);
+    font-size: 0.8rem;
     padding: 0.2rem;
     width: 100%;
     line-height: 1rem;
