@@ -10,7 +10,7 @@
         <h3>Social</h3>
         <div class="row no-gutters">
             <label class="col-md-2">Twitter Template:</label>
-            <textarea class="col-md-10" rows="6" v-model="twitter_template"/>
+            <textarea class="col-md-10" rows="10" v-model="twitter_template"/>
             <div class="w-100"></div>
             <div class="col-md-10 offset-md-2">
                 <div><i>$DESCRIPTION</i> - Stream description</div>
