@@ -5,10 +5,10 @@
             <div class="col col-lg-1">
                 <label title="id" >ID</label>
             </div>
-            <div class="col">
+            <div class="col col-lg-4">
                 <label title="value">Value</label>
             </div>
-            <div class="col">
+            <div class="col col-lg-5">
                 <label title="output_file">Path</label>
             </div>
             <div class="col col-lg-1">

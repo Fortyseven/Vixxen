@@ -7,12 +7,12 @@
                     :disabled="!is_new"
                     placeholder="Unique identifier"/>
             </div>
-            <div class="col">
+            <div class="col col-lg-4">
                 <input type="text"
                     :value="value"
                     placeholder="Template string"/>
             </div>
-            <div class="col output_file">
+            <div class="col col-lg-5 output_file">
                 <input type="text"
                     :value="output_file"
                     placeholder="File output path">
