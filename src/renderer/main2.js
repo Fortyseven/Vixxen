@@ -33,30 +33,30 @@ Vue.config.productionTip = false;
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.mixin({
-    methods: {
-        openExternal(href, user_browser = false) {
-            if (user_browser) {
-                window.open(href);
-            } else {
-                this.$electron.shell.openExternal(href);
-            }
-        },
-        getStoreGetter(key) {
-            return this.$store.getters[key];
-        },
-        interpolateString(instring) {
-            return interpolateString(this.$store, instring);
-        }
+  methods: {
+    openExternal(href, user_browser = false) {
+      if (user_browser) {
+        window.open(href);
+      } else {
+        this.$electron.shell.openExternal(href);
+      }
+    },
+    getStoreGetter(key) {
+      return this.$store.getters[key];
+    },
+    interpolateString(instring) {
+      return interpolateString(this.$store, instring);
     }
+  }
 });
 
 /* eslint-disable no-new */
 var app_instance = new Vue({
-    name: "Vixxen",
-    components: { App },
-    router,
-    store,
-    template: "<App/>"
+  name: "Vixxen",
+  components: { App },
+  router,
+  store,
+  template: "<App/>"
 });
 
 Vue.use(LabelManager, { store, app_instance });

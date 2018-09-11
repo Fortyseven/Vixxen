@@ -32,7 +32,7 @@ export default new Router({
         {
             path: '/labels',
             name: 'labels',
-            component: require('@/components/Labels').default
+            component: require('@/components/Labels/Labels').default
         },
         {
             path: '/config',

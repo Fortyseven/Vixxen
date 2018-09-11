@@ -26,23 +26,20 @@
         </div>
     </div>
 </template>
-
+<!-- ----------------------------------- -->
 <script>
-/************************************************************************/
 var shell = require("electron").shell;
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 export default {
     name: "chat",
 
     data: () => {
         return {
-            isOpen: false,
-        }
+            isOpen: false
+        };
     },
     computed: {
-        ...mapGetters([
-            'getTwitchUser'
-        ]),
+        ...mapGetters(["getTwitchUser"]),
         favorites() {
             return this.$store.getters.getFavorites;
         }
@@ -60,41 +57,39 @@ export default {
                     this.data().isOpen = true;
                     console.log("Fuck");
                 }
-            }
+            };
         },
-        openChatExternal( href ) {
+        openChatExternal(href) {
             window.open(href, "Chat window");
             //this.$electron.shell.openExternal( href );
         }
-    },
+    }
 };
-
-/***********************************************************************/
 </script>
-
+<!-- ----------------------------------- -->
 <style>
-    .chat {
-        box-sizing: border-box;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .chat > h1 {
-        flex: 0 0 auto;
-    }
-    .chat > .iframe-container {
-        flex: 1 1 auto;
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-    }
-    .chat > div > iframe {
-        width: 100%;
-        height: 100%;
-        padding-bottom: 1rem;
-    }
-    .chat > .external-links {
-        flex: 0 0 auto;
-        display: flex;
-    }
+.chat {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.chat > h1 {
+    flex: 0 0 auto;
+}
+.chat > .iframe-container {
+    flex: 1 1 auto;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+.chat > div > iframe {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
+}
+.chat > .external-links {
+    flex: 0 0 auto;
+    display: flex;
+}
 </style>

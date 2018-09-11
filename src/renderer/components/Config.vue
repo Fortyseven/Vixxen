@@ -20,14 +20,12 @@
         </div>
     </div>
 </template>
-
+<!-- ----------------------------------- -->
 <script>
-/************************************************************************/
-// import SystemInformation from "./LandingPage/SystemInformation";
 var shell = require("electron").shell;
 
-import {mapGetters} from 'vuex';
-import {mapMutations} from 'vuex';
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 
 export default {
     name: "config",
@@ -36,25 +34,24 @@ export default {
             get() {
                 return this.$store.getters.getTwitchUser;
             },
-            set( value ) {
-                this.$store.commit( 'setTwitchUser', value );
+            set(value) {
+                this.$store.commit("setTwitchUser", value);
             }
         },
         twitter_template: {
             get() {
                 return this.$store.getters.getTwitterTemplate;
             },
-            set( value ) {
-                this.$store.commit( 'setTwitterTemplate', value );
+            set(value) {
+                this.$store.commit("setTwitterTemplate", value);
             }
         }
     }
 };
-/***********************************************************************/
 </script>
-
+<!-- ----------------------------------- -->
 <style>
-    .dlgNewEntry {
-        background: red;
-    }
+.dlgNewEntry {
+    background: red;
+}
 </style>

@@ -31,26 +31,30 @@
         </div>
     </div>
 </template>
-
+<!-- ----------------------------------- -->
 <script>
 // import { mapGetters} from 'vuex';
 
 export default {
-    name: 'social',
+    name: "social",
     computed: {
         updateTwitchTitle: function() {
-            return `${this.description} || ${this.game.toUpperCase()} || 🕹 Slack Injection Arcade 👾`;
+            return `${
+                this.description
+            } || ${this.game.toUpperCase()} || 🕹 Slack Injection Arcade 👾`;
         },
         updateOutput: function() {
             //return `${this.description}\n\n🔴LIVE 👉👉 '${this.game}' @ https://twitch.tv/${this.getTwitchUser}\n\n#twitch ${this.hashify(this.game)}`;
-            return this.interpolateString( this.getStoreGetter('getTwitterTemplate') );
+            return this.interpolateString(
+                this.getStoreGetter("getTwitterTemplate")
+            );
         },
         description: {
             get() {
                 return this.$store.getters.getStreamDescription;
             },
             set(value) {
-                this.$store.commit('setStreamDescription', value);
+                this.$store.commit("setStreamDescription", value);
             }
         },
         game: {
@@ -58,27 +62,28 @@ export default {
                 return this.$store.getters.getStreamGame;
             },
             set(value) {
-                this.$store.commit('setStreamGame', value);
+                this.$store.commit("setStreamGame", value);
             }
-        },
-
+        }
     },
     methods: {
-        open (link) {
-            this.$electron.shell.openExternal(link)
+        open(link) {
+            this.$electron.shell.openExternal(link);
         },
-        copyToClipboard( id ) {
+        copyToClipboard(id) {
             $(id).select();
             document.execCommand("copy");
         },
         tweet() {
-            let tweet = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent( this.updateOutput );
-            this.openExternal( tweet );
+            let tweet =
+                "https://twitter.com/intent/tweet?text=" +
+                encodeURIComponent(this.updateOutput);
+            this.openExternal(tweet);
         }
     }
 };
 </script>
-
+<!-- ----------------------------------- -->
 <style lang="scss" scoped>
 .social {
     hr {
@@ -101,7 +106,7 @@ export default {
         font-family: inherit;
         width: 100%;
         font-size: 9pt;
-        background: rgba(255,255,255,0.25);
+        background: rgba(255, 255, 255, 0.25);
         color: white;
         font-family: monospace;
     }

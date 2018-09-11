@@ -17,9 +17,8 @@
         </div>
     </div>
 </template>
-
+<!-- ----------------------------------- -->
 <script>
-/************************************************************************/
 // import SystemInformation from "./LandingPage/SystemInformation";
 var shell = require("electron").shell;
 
@@ -30,8 +29,8 @@ export default {
     //   },
     data: () => {
         return {
-            isOpen: false,
-        }
+            isOpen: false
+        };
     },
     computed: {
         favorites() {
@@ -51,16 +50,14 @@ export default {
                     this.data().isOpen = true;
                     console.log("Fuck");
                 }
-            }
+            };
         }
-    },
-
-};
-/***********************************************************************/
-</script>
-
-<style>
-    .dlgNewEntry {
-        background: red;
     }
+};
+</script>
+<!-- ----------------------------------- -->
+<style>
+.dlgNewEntry {
+    background: red;
+}
 </style>

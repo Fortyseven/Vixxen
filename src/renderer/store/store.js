@@ -1,12 +1,12 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import VuexPersistence from 'vuex-persist';
+import Vue from "vue";
+import Vuex from "vuex";
+import VuexPersistence from "vuex-persist";
 
 Vue.use(Vuex);
 
-import twitch from './twitch';
-import stream from './stream';
-import labels from './labels';
+import twitch from "./twitch";
+import stream from "./stream";
+import labels from "./labels";
 
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage
@@ -18,7 +18,5 @@ export default new Vuex.Store({
         stream,
         labels
     },
-    plugins: [
-        vuexLocal.plugin
-    ]
+    plugins: [vuexLocal.plugin]
 });

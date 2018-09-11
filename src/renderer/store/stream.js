@@ -2,7 +2,8 @@ export default {
     state: {
         stream_game_name: "Far Cry 5",
         stream_description: "This is a game stream.",
-        social_twitter_template: "$DESCRIPTION\n🔴LIVE 👉👉 '$GAME' @ https://twitch.tv/$TWITCH_USER #twitch $GAME_HASHTAG",
+        social_twitter_template:
+            "$DESCRIPTION\n🔴LIVE 👉👉 '$GAME' @ https://twitch.tv/$TWITCH_USER #twitch $GAME_HASHTAG"
     },
     getters: {
         getStreamGame: state => {

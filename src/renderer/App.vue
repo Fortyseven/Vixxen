@@ -15,83 +15,95 @@
         </div>
     </div>
 </template>
-
+<!-- ----------------------------------- -->
 <script>
 import VixxenMenu from "./components/UI/Menu";
 import StatusBar from "./components/UI/StatusBar";
 
 export default {
-    name: 'Vixxen',
+    name: "Vixxen",
     components: {
         VixxenMenu,
         StatusBar
     }
-}
+};
 </script>
-
+<!-- ----------------------------------- -->
 <style lang="scss">
-    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-    :root {
-        --primary_color: #3300FF;
-        --primary_accent: #7700FF;
-        --secondary_color: #ccff00;
-        --twitch-purple: #6441A4;
-    }
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+:root {
+    --primary_color: #3300ff;
+    --primary_accent: #7700ff;
+    --secondary_color: #ccff00;
+    --twitch-purple: #6441a4;
+}
 
-    input {
-        color: black;
-    }
+input {
+    color: black;
+}
 
-    body {
-        width: 100vw;
+body {
+    width: 100vw;
+    height: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 12pt;
+}
+
+#app {
+    /* height: 100%; */
+    color: white;
+    padding: 0;
+    background: radial-gradient(
+        ellipse at top left,
+        var(--primary_color) 40%,
+        var(--primary_accent) 100%
+    );
+}
+
+#app > .row {
+    /* height: 100%; */
+}
+
+#ComponentContainer {
+    /* margin: 0.75rem; */
+}
+
+#app-menu {
+    /* flex: 0 0 auto; */
+    /* height: 100%; */
+    background: rgba(0, 0, 0, 0.25);
+}
+
+#app-content {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area {
+    flex: 1 1 auto;
+}
+
+.primary-container {
+    @media (min-width: 767px) {
         height: 100%;
-        font-family: 'Source Sans Pro', sans-serif;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        font-size: 12pt;
     }
+}
 
-    #app {
-        /* height: 100%; */
-        color: white;
-        padding: 0;
-        background: radial-gradient(
-            ellipse at top left,
-            var(--primary_color) 40%,
-            var(--primary_accent) 100%
-        );
-    }
+input[type="text"] {
+    border: 0;
+}
 
-    #app > .row {
-        /* height: 100%; */
-    }
-
-    #ComponentContainer {
-        /* margin: 0.75rem; */
-    }
-
-    #app-menu {
-        /* flex: 0 0 auto; */
-        /* height: 100%; */
-        background: rgba(0,0,0,0.25);
-
-    }
-
-    #app-content {
-        padding:0.75rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content-area {
-        flex: 1 1 auto;
-    }
-
-    .primary-container {
-        @media (min-width:767px) {
-            height: 100%;
-        }
-    }
-
+input::placeholder {
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+input:disabled {
+    background: lightgray;
+}
 </style>

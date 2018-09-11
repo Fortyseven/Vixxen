@@ -2,7 +2,7 @@ export default {
     state: {
         labels_enabled: false,
         labels: {
-            'date': {
+            date: {
                 value: "$TIME",
                 output_file: `D:\\Home\\Stream\\_Apps\\Snaz\\TextFiles\\Time.txt`,
                 interval: 1000
@@ -25,11 +25,12 @@ export default {
                 interval: payload.interval
             };
             state.labels[payload.id] = obj;
+            console.log(state);
         },
         removeLabel(state, id) {
             delete state.labels[id];
         },
-        setLabelState(state, bool)  {
+        setLabelState(state, bool) {
             state.labels_enabled = bool;
         }
     }

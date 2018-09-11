@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Vixxen</title>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <% if (htmlWebpackPlugin.options.nodeModules) { %>
-        <!-- Add `node_modules/` to global paths so `require` works properly in development -->
-        <script>
+    <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+    <script>
         require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
-        </script>
+    </script>
     <% } %>
 </head>
+
 <body>
     <div style="width:100vw; height:100vh; overflow:hidden">
-    <div id="app"></div>
+        <div id="app"></div>
     </div>
     <!-- Set `__static` path to static files in production -->
     <script>
@@ -22,4 +24,5 @@
 
     <!-- webpack builds are automatically injected -->
 </body>
+
 </html>
