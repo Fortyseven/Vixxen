@@ -31,11 +31,16 @@ export default {
 <!-- ----------------------------------- -->
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Oxygen+Mono");
+
 :root {
     --primary_color: #3300ff;
     --primary_accent: #7700ff;
     --secondary_color: #ccff00;
     --twitch-purple: #6441a4;
+
+    --base-font: "Source Sans Pro", sans-serif;
+    --mono-font: "Oxygen Mono";
 }
 
 input {
@@ -45,7 +50,7 @@ input {
 body {
     width: 100vw;
     height: 100%;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: var(--base-font);
     box-sizing: border-box;
     padding: 0;
     margin: 0;
