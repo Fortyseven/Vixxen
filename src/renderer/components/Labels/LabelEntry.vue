@@ -99,7 +99,7 @@ form:hover {
 input {
     width: 100%;
     height: 2rem;
-    font-family: monospace;
+    font-family: var(--mono-font);
     font-size: 0.8em;
     padding: 0 0.5em;
 }

@@ -50,8 +50,12 @@ export default {
 };
 </script>
 <!-- ----------------------------------- -->
-<style>
+<style scoped>
 .dlgNewEntry {
     background: red;
+}
+textarea {
+    font-family: var(--mono-font);
+    padding: 0.5em !important;
 }
 </style>
