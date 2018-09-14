@@ -1,13 +1,7 @@
 export default {
     state: {
         labels_enabled: false,
-        labels: {
-            date: {
-                value: "$TIME",
-                output_file: `D:\\Home\\Stream\\_Apps\\Snaz\\TextFiles\\Time.txt`,
-                interval: 1000
-            }
-        }
+        labels: {}
     },
     getters: {
         getLabels: state => {
