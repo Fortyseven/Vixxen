@@ -19,6 +19,7 @@ export default {
                 interval: payload.interval
             };
             state.labels[payload.id] = obj;
+            this._vm.$labelManager.reload();
         },
         removeLabel(state, id) {
             delete state.labels[id];
