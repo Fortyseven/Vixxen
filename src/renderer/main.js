@@ -11,9 +11,10 @@ import fasolid from "@fortawesome/fontawesome-free-solid";
 
 import LabelManager from "./LabelManager";
 
+import BootstrapVue from "bootstrap-vue";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import jQuery from "jquery";
 
@@ -28,6 +29,8 @@ if (!process.env.IS_WEB) Vue.use(require("vue-electron"));
 
 Vue.http = Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
+
+Vue.use(BootstrapVue);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
