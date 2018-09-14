@@ -11,7 +11,6 @@ import fasolid from "@fortawesome/fontawesome-free-solid";
 
 import LabelManager from "./LabelManager";
 
-// import Store from 'electron-store';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
