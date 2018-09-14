@@ -4,17 +4,6 @@ function hashify(title) {
     return `#${stripped}`;
 }
 
-function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? "pm" : "am";
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    var strTime = hours + ":" + minutes + ":" + date.getSeconds() + " " + ampm;
-    return strTime;
-}
-
 export default function($state, instring) {
     // Mapping values are either a string referencing the
     // store getter name, or a function returning a value.
@@ -25,8 +14,48 @@ export default function($state, instring) {
         GAME_HASHTAG: () => {
             return hashify($state.getters["getStreamGame"]);
         },
-        TIME: () => {
-            return formatAMPM(new Date());
+        HOUR_24: () => {
+            return (new Date().getHours() + "").padStart(2, "0");
+        },
+        HOUR_12: () => {
+            return ((new Date().getHours() % 12) + "").padStart(2, "0");
+        },
+        AMPM: () => {
+            return new Date().getHours() >= 12 ? "PM" : "AM";
+        },
+        ampm: () => {
+            return new Date().getHours() >= 12 ? "pm" : "am";
+        },
+        MIN: () => {
+            return (new Date().getMinutes() + "").padStart(2, "0");
+        },
+        SEC: () => {
+            return (new Date().getSeconds() + "").padStart(2, "0");
+        },
+        YEAR: () => {
+            return new Date().getFullYear();
+        },
+        MON: () => {
+            return (new Date().getMonth() + "").padStart(2, "0");
+        },
+        DATE: () => {
+            return (new Date().getDate() + "").padStart(2, "0");
+        },
+        DOW_3: () => {
+            return ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][
+                new Date().getDay()
+            ];
+        },
+        DOW: () => {
+            return [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ][new Date().getDay()];
         }
     };
 
