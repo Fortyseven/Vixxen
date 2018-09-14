@@ -19,7 +19,6 @@ export default {
                 interval: payload.interval
             };
             state.labels[payload.id] = obj;
-            console.log(state);
         },
         removeLabel(state, id) {
             delete state.labels[id];
