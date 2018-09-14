@@ -1,35 +1,41 @@
 <template>
-    <div class="labels container m-0">
+    <b-container class="labels container m-0">
         <h1><font-awesome-icon icon="file"/> Labels</h1>
-        <div class="content row m-0">
-            <div class="col col-lg-1">
-                <label title="id" >ID</label>
-            </div>
-            <div class="col col-lg-4">
-                <label title="value">Value</label>
-            </div>
-            <div class="col col-lg-5">
-                <label title="output_file">Path</label>
-            </div>
-            <div class="col col-lg-1">
-                <label title="interval">Interval <small>(ms)</small></label>
-            </div>
-            <div class="col">
-            </div>
-        </div>
+        <b-container fluid>
+            <b-row>
+                <b-col cols="1">
+                    <label title="id" >ID</label>
+                </b-col>
+                <b-col>
+                    <label title="value">Value</label>
+                </b-col>
+                <b-col>
+                    <label title="output_file">Path</label>
+                </b-col>
+                <b-col cols="1">
+                    <label title="interval">Interval <small>(ms)</small></label>
+                </b-col>
+                <b-col cols="1">
+                </b-col>
+            </b-row>
+        </b-container>
         <LabelEntry
-            class='entry' v-for="(entry,id) in getLabels" :key="id"
+            class='entry'
+            v-for="(entry,id) in getLabels"
+            :key="id"
             :id="id"
             :value="entry.value"
             :output_file="entry.output_file"
             :interval="entry.interval"
-            v-on:removeLabel="removeLabel(id)"
+            v-on:addLabel="addLabel"
+            v-on:removeLabel="removeLabel"
             />
         <hr/>
-        <div class="row m-0">
-            <LabelEntry class='entry' is_new='true' />
-        </div>
-    </div>
+        <LabelEntry
+            v-on:addLabel="addLabel"
+            class='entry'
+            is_new='true' />
+    </b-container>
 </template>
 <!-- ----------------------------------- -->
 <script>
@@ -68,6 +74,11 @@ export default {
             } else {
                 console.error(err);
             }
+        },
+        addLabel(new_label) {
+            console.log("new_label", new_label);
+            this.$store.commit("addLabel", new_label);
+            this.$forceUpdate();
         },
         removeLabel(id) {
             this.$store.commit("removeLabel", id);

@@ -1,34 +1,67 @@
 <template>
     <div class="social container-fluid d-flex flex-column">
         <h1><font-awesome-icon icon="bullhorn"/> Social</h1>
-        <div class="content">
-            <h4>Description</h4>
-            <textarea placeholder="Describe the stream..." v-model="description" rows="4" class="description"></textarea>
-            <h4>Game</h4>
-            <input v-model="game" type="text">
+        <b-container>
+            <b-row>
+                <b-col>
+                    <b-form-group>
+                        <b-row>
+                            <b-input-group
+                                id="socialDescription"
+                                size="lg">
+                                <b-input-group-prepend is-text>
+                                    Description
+                                </b-input-group-prepend>
+                                <b-input
+                                    placeholder="Describe the stream..."
+                                    v-model="description"/>
+                            </b-input-group>
+                        </b-row>
+                        <br/>
+                        <b-row>
+                            <b-input-group
+                                id="socialGame"
+                                prepend="Game"
+                                size="lg">
 
-            <div class="row no-gutters"><div class="w-100"><hr/></div></div>
-            <div class="container-fluid p-0 row">
-                <div class="col-12 col-lg-6">
-                    <h4>Stream Title</h4>
-                    <textarea id="StreamName" rows="2" readonly class="output" v-html="updateTwitchTitle"></textarea>
-                    <div class="row no-gutters">
-                        <button class="btn col-2" @click="copyToClipboard('#StreamName')">👆 Copy</button>
-                    </div>
-                </div>
+                                <b-input
+                                    v-model="game"
+                                    type="text"/>
+                            </b-input-group>
+                        </b-row>
+                    </b-form-group>
+                </b-col>
+            </b-row>
 
-                <div class="d-block d-lg-none col-12 no-gutters"><div class="w-100"><hr/></div></div>
+            <b-row><hr/></b-row>
 
-                <div class="col-12 col-lg-6">
-                    <h4>Twitter</h4>
-                    <textarea id="SocialText" rows="6" readonly class="output" v-html="updateOutput"></textarea>
-                    <div class="row no-gutters">
-                        <button class="btn col-2 m-1" @click="copyToClipboard('#SocialText')">👆 Copy</button>
-                        <button class="btn col-2 m-1" @click="tweet">🐦 Tweet</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <b-row>
+                <b-col md="5" class="mr-2">
+                    <b-row>
+                        <h4>Stream Title</h4>
+                    </b-row>
+                    <b-row>
+                        <b-textarea id="StreamName" rows="9" readonly class="output" v-html="updateTwitchTitle"></b-textarea>
+                    </b-row>
+                    <b-row class="mt-2">
+                        <b-button class="" @click="copyToClipboard('#StreamName')">👆 Copy</b-button>
+                    </b-row>
+                </b-col>
+
+                <b-col md="5">
+                    <b-row>
+                        <h4>Twitter</h4>
+                    </b-row>
+                    <b-row>
+                        <b-textarea id="SocialText" rows="9" readonly class="output" v-html="updateOutput"></b-textarea>
+                    </b-row>
+                    <b-row class="mt-2">
+                        <b-button class="mr-2" @click="copyToClipboard('#SocialText')">👆 Copy</b-button>
+                        <b-button class="" @click="tweet">🐦 Tweet</b-button>
+                    </b-row>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 </template>
 <!-- ----------------------------------- -->
@@ -86,29 +119,8 @@ export default {
 <!-- ----------------------------------- -->
 <style lang="scss" scoped>
 .social {
-    hr {
-        border: 1px dashed white;
-    }
-    label {
-        display: block;
-        font-weight: bold;
-    }
-    button {
-        display: block;
-    }
-    textarea.description {
-        width: 100%;
-    }
     textarea.output {
-        font-family: "Ubuntu Mono";
-        padding: 1em;
-        border: none;
-        font-family: inherit;
-        width: 100%;
-        font-size: 9pt;
-        background: rgba(255, 255, 255, 0.25);
-        color: white;
-        font-family: monospace;
+        font-size: 0.8em;
     }
 }
 </style>
